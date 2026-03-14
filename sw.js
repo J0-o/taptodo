@@ -1,4 +1,4 @@
-const CACHE_NAME = 'todoapp-v2';
+const CACHE_NAME = 'todoapp-v3';
 const APP_ASSETS = [
   './',
   './index.html',
@@ -133,6 +133,21 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
+  const requestUrl = new URL(event.request.url);
+  const isManifestRequest = requestUrl.pathname.endsWith('/manifest.webmanifest') || requestUrl.pathname.endsWith('manifest.webmanifest');
+
+  if (isManifestRequest) {
+    event.respondWith(
+      fetch(event.request).then((response) => {
+        if (response && response.status === 200) {
+          const responseClone = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseClone));
+        }
+        return response;
+      }).catch(() => caches.match(event.request))
+    );
+    return;
+  }
 
   event.respondWith(
     caches.match(event.request).then((cached) => {
