@@ -25,3 +25,6 @@ Tap To Do was designed to make adding a task as frictionless as possible. The fo
 #
 
 ### [Go To Web App](https://j0-o.github.io/taptodo/)
+Tap To DO web app can be added to you homescreen from a mobile broswer.
+
+HOW TO: [Apple iOS](https://support.apple.com/guide/iphone/open-as-web-app-iphea86e5236/ios) , [Android](https://www.howtogeek.com/196087/how-to-add-websites-to-the-home-screen-on-any-smartphone-or-tablet/)
