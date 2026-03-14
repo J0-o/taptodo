@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do</title>
+  <link rel="icon" href="icon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="assets/fonts.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+    <div class="tabs-bar">
+      <div class="list-tabs" id="list-tabs"></div>
+      <div class="app-menu" id="app-menu">
+        <button type="button" id="app-menu-btn" aria-label="Open menu" title="Menu">
+          <span class="material-symbols-rounded">menu</span>
+        </button>
+        <div class="app-menu-panel" id="app-menu-panel" hidden>
+          <button type="button" id="new-list-btn" aria-label="New list" title="New list"><span class="material-symbols-rounded">add</span><span>New list</span></button>
+          <select id="theme-switcher" aria-label="Theme switcher">
+            <option value="dark">Dark</option>
+            <option value="light">Light</option>
+            <option value="heatmap">Heatmap</option>
+            <option value="sepia">Sepia</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <form id="new-todo">
+      <input type="text" id="todo-input" autocomplete="off" placeholder="Add a task and hit Enter" required>
+      <div class="quick-add" id="quick-add">
+        <button type="button" data-quick="today"><span class="material-symbols-rounded">today</span><span>Today</span></button>
+        <button type="button" data-quick="tomorrow"><span class="material-symbols-rounded">event_upcoming</span><span>Tomorrow</span></button>
+        <button type="button" data-quick="nextweek"><span class="material-symbols-rounded">view_week</span><span>Next Week</span></button>
+        <button type="button" data-quick="nextmonth"><span class="material-symbols-rounded">calendar_view_month</span><span>Next Month</span></button>
+        <button type="button" id="calendar-btn" title="Calendar" aria-label="Calendar"><span class="material-symbols-rounded">calendar_month</span><span>Calendar</span></button>
+      </div>
+    </form>
+
+    <div class="list-viewport" id="list-viewport">
+      <ul id="list"></ul>
+    </div>
+
+  </div>
+  <div id="modal-root"></div>
+
+    <script src="themes.js"></script>
+    <script src="todo-utils.js"></script>
+    <script src="storage.js"></script>
+    <script src="images.js"></script>
+    <script src="interactions.js"></script>
+    <script src="render.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
