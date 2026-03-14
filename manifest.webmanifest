@@ -1,6 +1,6 @@
 {
-  "name": "To-Do",
-  "short_name": "To-Do",
+  "name": "Tap To Do",
+  "short_name": "Tap To Do",
   "start_url": "./",
   "scope": "./",
   "icons": [
