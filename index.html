@@ -50,6 +50,13 @@
   </div>
   <div id="modal-root"></div>
 
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js');
+        });
+      }
+    </script>
     <script src="themes.js"></script>
     <script src="todo-utils.js"></script>
     <script src="storage.js"></script>
